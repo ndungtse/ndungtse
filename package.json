@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 1019",
     "build": "next build",
     "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
     "start": "next start"
   },
   "dependencies": {
@@ -11,6 +12,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.10",
+    "@next/bundle-analyzer": "^13.0.2",
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
     "@sanity/webhook": "^2.0.0",

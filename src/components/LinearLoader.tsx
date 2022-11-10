@@ -24,7 +24,7 @@ const LinearLoader = () => {
 			sx={{
 				width: "100%",
 				color: "#136ed2",
-				position: "sticky",
+				position: "absolute",
 				top: 0,
 				zIndex: 999,
 			}}

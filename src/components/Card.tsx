@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Image from 'next/image'
 
 export const boxVariant = {
     visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
@@ -35,7 +36,7 @@ const Card = ({ability}: any) => {
         >   
         <div className="aspect-square">
             <div className="w-full h-[24vh] overflow-hidden">
-                <img className='min-h-full min-w-full object-fill' src={ability.image} alt="" />
+                <Image height={1080} width={1920} className='min-h-full min-w-full object-fill' src={ability.image} alt="" />
             </div>
             <div className="flex w-full flex-col">
                 <h2 className='text-xl my-2 font-semibold text-center'>{ability.title}</h2>

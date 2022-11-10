@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Home from "../sections/Home";
 import { FaArrowUp } from "react-icons/fa";
 import { useApp } from "../contexts/AppContext";
 import Layout from "../components/Layout";
 import LinearLoader from "../components/LinearLoader";
-import RecentActivity from "../components/home/RecentActivity";
+const RecentActivity = dynamic(()=> import("../components/home/RecentActivity"));
 import { sanityClient } from "../lib/sanity.server";
 import { indexQuery } from "../lib/queries";
 
