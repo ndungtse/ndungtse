@@ -57,7 +57,6 @@ export default ProjectIndex;
 
 export const getStaticProps = async () => {
 	const projects = await sanityClient.fetch(projectQuery);
-
 	return {
 		props: {
 			projects,

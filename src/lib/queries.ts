@@ -30,9 +30,7 @@ const projectFields = `
   `
 
   export const projectQuery =  `*[_type == "project"] | order(publishedAt desc) {
-    title,
-    description,
-    
+   ${projectFields}
   }`
 
   const DownloadFileQuery = `*[_type == "resources"] | order(publishedAt desc) {

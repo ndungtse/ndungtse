@@ -58,7 +58,7 @@ const Navbar: React.FC<Props> = ({ setLinear }) => {
 		<div
 			className={`h-[60px] z-10 ${themeClass.nav} ${
 				mobile ? "" : "overflow-hidden"
-			} shadow-md sticky top-0 w-full flex items-center justify-center`}
+			} sticky top-0 w-full flex items-center bg-gradient-to-t shadow-sm shadow-slate-100 from-slate-100 to-white justify-center`}
 		>
 			{mobile && (
 				<div
@@ -87,8 +87,8 @@ const Navbar: React.FC<Props> = ({ setLinear }) => {
 					/>
 				</div>
 				<div
-					className={`md:static z-50 flex flex-col duration-300
-                md:flex-row items-center text-lg absolute md:justify-end md:py-0 py-4 ${
+					className={`md:static z-50 flex flex-col duration-300 
+                md:flex-row items-center text-xl absolute md:justify-end md:py-0 py-4 ${
 									mobile
 										? `right-0 flex top-[3em] min-w-[200px] max-w-full w-full ${themeClass.nav}`
 										: " right-[-500px] hidde"
@@ -98,7 +98,7 @@ const Navbar: React.FC<Props> = ({ setLinear }) => {
 						onClick={() => handleNavClick("/")}
 						className="md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative"
 					>
-						<span className="z-[2] relative">Home</span>
+						Home
 					</p>
 					<p
 						onClick={() => handleNavClick("/carreer")}

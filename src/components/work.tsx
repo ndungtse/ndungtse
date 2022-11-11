@@ -1,12 +1,14 @@
-import { AnimationControls, useAnimation, motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react'
-import { urlForImage } from '../lib/sanity';
-import { useInView } from 'react-intersection-observer';
-import Image, { ImageLoaderProps } from 'next/image'
+import { AnimationControls, useAnimation, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { urlForImage } from "../lib/sanity";
+import { useInView } from "react-intersection-observer";
+import Image, { ImageLoaderProps } from "next/image";
+import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
+import { ProjectType } from "../lib/types";
 
 const myLoader = ({ src }: ImageLoaderProps) => {
-  return `${src}`
-}
+	return `${src}`;
+};
 
 const textVariant = {
 	before: { opacity: 0, x: -40, transition: { duration: 10 } },
@@ -18,7 +20,12 @@ const imgVariant = {
 	after: { opacity: 1, x: 0 },
 };
 
-const Work = ({ no, work }: any) => {
+type Props = {
+	work: ProjectType;
+	no: number;
+}
+
+const Work = ({ no, work }: Props) => {
 	const control: AnimationControls = useAnimation();
 	const [proref, inView] = useInView();
 	const [imgVar, setImgVar] = useState<any>(imgVariant);
@@ -34,7 +41,7 @@ const Work = ({ no, work }: any) => {
 	return (
 		<div
 			className={` flex flex-col border-[1px]
-      border-slate-200 shadow-md items-center p-[4%] gap-x-8  mt-[3vh] w-[80%] mx-auto`}
+      border-slate-200 shadow-md items-center p-[4%] justify-between gap-x-8  mt-[3vh] w-[80%] mx-auto`}
 		>
 			<motion.div
 				ref={proref}
@@ -61,21 +68,29 @@ const Work = ({ no, work }: any) => {
 			>
 				<h2 className=" text-xl font-bold">{work.title}</h2>
 				<p className="">{work.description}</p>
+			</motion.div>
+			<div className="flex items-center w-full justify-between">
 				<a
 					href={work.link}
 					target="_blank"
 					rel="noreferrer"
-					className="flex mx-auto  items-center w-[160px] mt-4 text-white px-3 py-1 bg-blue-800
+					className="flex mx-auto  items-center w-[100px] mt-4 text-white px-3 py-2 rounded-md bg-blue-800
          justify-center hover:bg-blue-700 duration-300 cursor-pointer"
 				>
-					Visit Now
-					<p className="text-2xl flex items-center ml-2 my-auto cursor-pointer">
-						&rarr;
-					</p>
+					<FaExternalLinkAlt size={20} />
 				</a>
-			</motion.div>
+				<a
+					href={work.github}
+					target="_blank"
+					rel="noreferrer"
+					className="flex mx-auto  items-center w-[100px] mt-4 text-white px-3 py-1 rounded-md bg-blue-800
+         justify-center hover:bg-blue-700 duration-300 cursor-pointer"
+				>
+					<FaCode size={27} />
+				</a>
+			</div>
 		</div>
 	);
 };
 
-export default Work
+export default Work;
