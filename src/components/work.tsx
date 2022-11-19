@@ -74,7 +74,7 @@ const Work = ({ no, work }: Props) => {
 					href={work.link}
 					target="_blank"
 					rel="noreferrer"
-					className="flex mx-auto  items-center w-[100px] mt-4 text-white px-3 py-2 rounded-md bg-blue-800
+					className="flex mx-auto  items-center phone:w-[100px] w-1/3 mt-4 text-white px-3 py-2 rounded-md bg-blue-800
          justify-center hover:bg-blue-700 duration-300 cursor-pointer"
 				>
 					<FaExternalLinkAlt size={20} />
@@ -83,7 +83,7 @@ const Work = ({ no, work }: Props) => {
 					href={work.github}
 					target="_blank"
 					rel="noreferrer"
-					className="flex mx-auto  items-center w-[100px] mt-4 text-white px-3 py-1 rounded-md bg-blue-800
+					className="flex mx-auto  items-center phone:w-[100px] w-1/3 mt-4 text-white px-3 py-1 rounded-md bg-blue-800
          justify-center hover:bg-blue-700 duration-300 cursor-pointer"
 				>
 					<FaCode size={27} />

@@ -15,16 +15,16 @@ const Home: React.FC = () => {
 	return (
 		<div
 			id="home"
-			className={`flex  home bg-gradient-to-b ${themeClass.bg} justify-center flex-col items-center w-full`}
+			className={`flex sticky top-[4em] home bg-gradient-to-b ${themeClass.bg} justify-center flex-col items-center w-full h-screen`}
 		>
 			<div
-				className={`px-[3%] flex xtab:flex-row flex-col-reverse  w-full bg-gradient-to-b 
-			${themeClass.bg} items-center justify-center  bg-opacity-100`}
+				className={`px-[3%] flex  flex-col h-full w-full
+			 items-center justify-center  bg-opacity-100`}
 			>
-				<div className="flex mx-auto xtab:mt-0 mt-7 items-center justify-center h-full flex-col">
-					<div className="relative ml-4 laptop:w-full flex flex-col xtab:items-start items-center">
+				<div className="flex mx-auto items-center justify-center h-full w-full flex-col z-[5]">
+					<div className="relative ml-4 w-full flex flex-col  items-center">
 						<h2
-							className="laptop:text-[3em] xs:text-[2.5em] text-2xl text-center md:text-start font-bold leading-[1em] font-poppin
+							className="laptop:text-[3em] xs:text-[2.5em] text-2xl text-center font-bold leading-[1em] font-poppin
 						 bg-gradient-to-tr from-blue-500 to-violet-700 names"
 						>
 							Hi. I'm Ishimwe Ndungutse Charles
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
 					</div>
 					<div
 						className="w-full
-					   flex items-start xtab:justify-start flex-wrap justify-center mt-2 text-blue-600"
+					   flex items-start flex-wrap justify-center mt-2 text-blue-600"
 					>
 						<a
 							className="flex items-center mt-5 pl-6"
@@ -100,8 +100,8 @@ const Home: React.FC = () => {
 						</a>
 					</div>
 				</div>
-				<div className="flex px-[5%] laptop:px-0 laptop:aspect-square items-center justify-center">
-					<img className="xtab:w-full w-4/5" src={"/images/code.svg"} alt="" />
+				<div className="flex absolute top-0 px-[5%] laptop:px-0 laptop:aspect-square items-center justify-center">
+					{/* <img className="xtab:w-full w-4/5 bg-transparent opacity-60" src={"/images/code.svg"} alt="" /> */}
 				</div>
 			</div>
 		</div>

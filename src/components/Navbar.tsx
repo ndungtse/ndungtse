@@ -37,7 +37,7 @@ const Navbar: React.FC<Props> = ({ setLinear }) => {
 	const getResume = async () => {
 		setLinear(true);
 		let url = resumeUrl;
-		if (url==='') {
+		if (url === "") {
 			const res = await sanityClient.fetch(
 				`*[_type == "resources" && title=="Resume"]{
 				file{asset->{url}}
@@ -56,77 +56,71 @@ const Navbar: React.FC<Props> = ({ setLinear }) => {
 
 	return (
 		<div
-			className={`h-[60px] z-10 ${themeClass.nav} ${
-				mobile ? "" : "overflow-hidden"
-			} sticky top-0 w-full flex items-center bg-gradient-to-t shadow-sm shadow-slate-100 from-slate-100 to-white justify-center`}
+			className={`h-[64px] z-10 ${themeClass.nav} sticky top-0 bg-gradient-to-t shadow-sm shadow-slate-100 z-50 from-slate-100 to-white justify-center`}
 		>
-			{mobile && (
+			{/* {mobile && (
 				<div
 					onClick={() => setMobile(!mobile)}
-					className="absolute top-0 left-0 w-full h-screen z-[3]"
+					className='absolute top-0 left-0 w-full h-screen z-[3]'
 				></div>
-			)}
-			<div className="w-full z-[5] relative flex items-center h-full   px-[4%] justify-between">
+			)} */}
+			<BiMenu
+				onClick={() => setMobile(!mobile)}
+				className='md:hidden z-10 block text-3xl cursor-pointer absolute right-3 top-3'
+			/>
+			<div
+				className={`w-full md:static absolute z-[5] flex md:flex-row flex-col items-center bg-inherit
+			${
+				mobile ? "top-0" : "-top-[1000px]"
+			} duration-500 md:py-0 py-4 md:h-full px-[4%] justify-between`}
+			>
 				<div
 					onClick={mobile ? mobileHan : () => {}}
-					className="w-full relative py-2 flex items-center h-full  px-5 justify-between"
+					className='md:static top-[0.15em] fixed left-7 flex items-center'
 				>
-					<p
-						onClick={() => handleNavClick("/")}
-						className="aspect-square min-w-[100px] max-h-full z-10 cursor-pointer"
-					>
-						<img
-							className="aspect-square max-h-full"
-							src={"/images/logo.png"}
-							alt="charles"
-						/>
-					</p>
-					<BiMenu
-						onClick={() => setMobile(!mobile)}
-						className="md:hidden z-10 block text-3xl cursor-pointer"
+					<img
+						className='aspect-square w-[60px]'
+						src={"/images/logo.png"}
+						alt='charles'
 					/>
 				</div>
 				<div
-					className={`md:static z-50 flex flex-col duration-300 
-                md:flex-row items-center text-xl absolute md:justify-end md:py-0 py-4 ${
-									mobile
-										? `right-0 flex top-[3em] min-w-[200px] max-w-full w-full ${themeClass.nav}`
-										: " right-[-500px] hidde"
-								}`}
+					className={`z-50 flex flex-col duration-300 
+                md:flex-row items-center text-xl md:justify-end md:py-0 py-4`}
 				>
 					<p
-						onClick={() => handleNavClick("/")}
-						className="md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative"
+						onClick={() => handleNavClick("#")}
+						className='md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative'
 					>
 						Home
 					</p>
 					<p
-						onClick={() => handleNavClick("/carreer")}
-						className="md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative"
+						onClick={() => handleNavClick("#fields")}
+						className='md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative'
 					>
 						Carreer
 					</p>
 					<p
-						onClick={() => handleNavClick("/projects")}
-						className="md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative"
+						onClick={() => handleNavClick("#projects")}
+						className='md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative'
 					>
 						Projects
 					</p>
 					<p
-						onClick={() => handleNavClick("/contact")}
-						className="md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative"
+						onClick={() => handleNavClick("#contact")}
+						className='md:ml-4 p-2 hover:text-[#0667ef] cursor-pointer navlink relative'
 					>
 						Contact
 					</p>
-					<button
-						onClick={getResume}
-						className=" from-blue-700 md:mt-0 mt-2 min-w-fit overflow-hidden btnstarted relative to-blue-500 bg-gradient-to-tr truncate py-1 px-4 ml-5 rounded-md text-white"
-					>
-						<span className=" relative z-[2]">Download CV </span>
-					</button>
 					{/* <BiSun className='ml-3 cursor-pointer'
                 onClick={()=> setIsDark(!isDark)} /> */}
 				</div>
+				<button
+					onClick={getResume}
+					className='md:mt-0 mt-2 min-w-fit overflow-hidden btnstarted relative border-blue-500 border-2 text-blue-500  truncate py-1 px-4 ml-5 rounded-md hover:text-white'
+				>
+					<span className=' relative z-[2]'>Download CV </span>
+				</button>
 			</div>
 		</div>
 	);

@@ -21,10 +21,10 @@ const Layout: React.FC<LProps> = ({children, title, setLinear}) => {
 			<div className="w-full flex flex-col min-h-screen justify-between">
 				<Navbar setLinear={setLinear} />
 				{children}
-				<div className={`flex flex-col ${themeClass.bg}`}>
+				{/* <div className={`flex flex-col ${themeClass.bg}`}>
 					<Contact />
 				</div>
-				<Footer />
+				<Footer /> */}
 			</div>
 		</>
 	);

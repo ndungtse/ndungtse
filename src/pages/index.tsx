@@ -4,10 +4,13 @@ import Home from "../sections/Home";
 import { FaArrowUp } from "react-icons/fa";
 import { useApp } from "../contexts/AppContext";
 import Layout from "../components/Layout";
-import LinearLoader from "../components/LinearLoader";
 const RecentActivity = dynamic(()=> import("../components/home/RecentActivity"));
 import { sanityClient } from "../lib/sanity.server";
 import { indexQuery } from "../lib/queries";
+import Footer from "../sections/Footer";
+import Contact from "../sections/Contact";
+import Fields from "../sections/Fields";
+import Skills from "../sections/Skills";
 
 function App({ recent }: any) {
 	const [showArr, setShowArr] = useState(false);
@@ -31,17 +34,24 @@ function App({ recent }: any) {
 
 	return (
 		<>
-			{linear && <LinearLoader />}
 			<Layout setLinear={setLinear}>
 				<Home />
-				<RecentActivity recent={recent} setLinear={setLinear} />
-				{showArr && (
-					<FaArrowUp
-						onClick={goToTop}
-						className="fixed bottom-7 cursor-pointer hover:bg-blue-800
-        				right-7 text-white  bg-blue-900 p-3 text-[2.5em]"
-					/>
-				)}
+				<div className='bg-white z-10'>
+					<Fields />
+					<Skills />
+					<RecentActivity recent={recent} setLinear={setLinear} />
+					{showArr && (
+						<FaArrowUp
+							onClick={goToTop}
+							className='fixed bottom-7 cursor-pointer hover:bg-blue-800
+        				right-7 text-white  bg-blue-900 p-3 text-[2.5em]'
+						/>
+					)}
+					<div className={`flex flex-col ${themeClass.bg}`}>
+						<Contact />
+					</div>
+					<Footer />
+				</div>
 			</Layout>
 		</>
 	);
