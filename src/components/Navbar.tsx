@@ -85,7 +85,7 @@ const Navbar: React.FC<Props> = ({ setLinear }) => {
 					/>
 				</div>
 				<div
-					className={`z-50 flex flex-col duration-300 
+					className={`z-50 font-[500] flex flex-col duration-300 
                 md:flex-row items-center text-xl md:justify-end md:py-0 py-4`}
 				>
 					<p

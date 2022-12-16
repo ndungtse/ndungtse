@@ -6,8 +6,8 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Rokkitt', serif;
-    /* font-family: 'Oxanium', cursive; */
+    /* font-family: 'Rokkitt', serif; */
+    font-family: 'Oxanium', cursive;
     scroll-behavior: smooth;
 }
 

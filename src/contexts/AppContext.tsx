@@ -24,16 +24,16 @@ const themes = {
 		textAlt: "text-white",
 		nav: "bg-slate-50 text-black",
 		bgAlt: "bg-slate-200",
-		bgAlt1: "bg-white",
+		bgAlt1: "bg-gradient-to-b from-slate-200 to-white",
 	},
 	dark: {
 		text: "text-white",
 		bg: "from-slate-800 via-slate-800 to-slate-800",
 		bg1: "from-slate-800 via-slate-800 to-slate-800",
 		textAlt: "text-white",
-		nav: "bg-stone-800 text-white",
-		bgAlt: "bg-stone-800",
-		bgAlt1: "bg-black",
+		nav: "bg-[#191a2e]",
+		bgAlt: "bg-[#191a2e]",
+		bgAlt1: "from-[#191a2e]/90 via-[#191a2e] to-[#191a2e]",
 	},
 };
 
@@ -44,7 +44,7 @@ export const useApp = () => useContext(AppContext);
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 	const [isDark, setIsDark] = useState(false);
 	const [mobile, setMobile] = useState(false);
-	const [themeClass, setThemeClass] = useState(themes.light);
+	const [themeClass, setThemeClass] = useState(themes.dark);
 
 	const saveTheme = () => {
 		if (isDark) {
@@ -67,18 +67,18 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 		}
 	};
 
-	useEffect(() => {
-		if (isDark) {
-			localStorage.setItem("theme", "dark");
-		} else {
-			localStorage.setItem("theme", "light");
-		}
+	// useEffect(() => {
+	// 	if (isDark) {
+	// 		localStorage.setItem("theme", "dark");
+	// 	} else {
+	// 		localStorage.setItem("theme", "light");
+	// 	}
 
-		setThemeClass(isDark ? themes.dark : themes.light);
-	}, [isDark]);
+	// 	setThemeClass(isDark ? themes.dark : themes.light);
+	// }, [isDark]);
 
 	useEffect(() => {
-		getSavedTheme();
+		// getSavedTheme();
 	}, []);
 
 	return (
