@@ -56,14 +56,8 @@ const Navbar: React.FC<Props> = ({ setLinear }) => {
 
 	return (
 		<div
-			className={`h-[64px] z-10 ${themeClass.nav} sticky top-0 bg-gradient-to-t shadow-sm shadow-slate-100 z-50 from-slate-100 to-white justify-center`}
+			className={`h-[64px] z-10 ${themeClass.nav} sticky top-0 bg-gradient-to-t shadow-md z-50 justify-center`}
 		>
-			{/* {mobile && (
-				<div
-					onClick={() => setMobile(!mobile)}
-					className='absolute top-0 left-0 w-full h-screen z-[3]'
-				></div>
-			)} */}
 			<BiMenu
 				onClick={() => setMobile(!mobile)}
 				className='md:hidden z-10 block text-3xl cursor-pointer absolute right-3 top-3'

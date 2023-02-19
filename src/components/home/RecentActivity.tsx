@@ -1,14 +1,15 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { useApp } from "../../contexts/AppContext";
 import Work from "../work";
 
 type Props = {
 	recent: any;
-	setLinear: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const RecentActivity = ({ recent, setLinear }: Props) => {
+const RecentActivity = ({ recent }: Props) => {
 	const [works, setWorks] = useState(recent.slice(0, 4));
 	const [showMore, setShowMore] = useState(false);
+	const { themeClass } = useApp()
 
 	const loadMore = () => {
 		// setLinear(true);
@@ -22,9 +23,9 @@ const RecentActivity = ({ recent, setLinear }: Props) => {
 	};
 
 	return (
-		<div id="projects" className={`flex flex-col w-full py-8`}>
+		<div id="projects" className={`flex flex-col w-full py-8 ${themeClass.bg}`}>
 			<h2 className='text-center text-2xl font-semibold'>Recent Activities</h2>
-			<div className=' grid xtab:grid-cols-3 tablet:grid-cols-2 desktop:grid-cols-4 w-full'>
+			<div className=' grid xtab:grid-cols-3 tablet:grid-cols-2 desktop:grid-cols-4 w-full gap-6 px-[2%]'>
 				{works.map((work: any, index: number) => (
 					<Work work={work} key={index} no={index} />
 				))}

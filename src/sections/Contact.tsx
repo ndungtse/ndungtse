@@ -3,6 +3,7 @@ import { BiEnvelopeOpen, BiSend } from 'react-icons/bi'
 import { FaFacebookSquare, FaGithubSquare, FaInstagramSquare, FaLinkedin, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import { useApp } from '../contexts/AppContext';
 import emailjs from '@emailjs/browser';
+import { Slide } from 'react-awesome-reveal'
 
 const Contact: React.FC = () => {
   const form = useRef();
@@ -46,6 +47,10 @@ const Contact: React.FC = () => {
   return (
     <div id='contact' className={`flex flex-col mt-4 tablet:w-4/5 mx-auto`}>
       <h1 className='text-center text-2xl font-bold'>Contact Me</h1>
+      <Slide 
+      direction='up'
+      triggerOnce
+      >
       <div className="grid laptop:grid-cols-3 mx-auto w-full md:grid-cols-2 mt-4 flex-wrap">
         <div className="flex items-center p-3 ">
           <div className="flex items-center bg-blue-800 rounded-full
@@ -96,6 +101,11 @@ const Contact: React.FC = () => {
            href="https://www.facebook.com/ishimwendungutsecharles">NdungutseCharles103</a></p>
         </div>
       </div>
+      </Slide>
+      <Slide 
+      direction='up'
+      triggerOnce
+      >
       <form onSubmit={sendEmail} className="flex flex-col w-full max-w-[700px]  mx-auto items-center">
       {/* <TextField id="outlined" type="text" label="Your Name" /> */}
       <div className='flex w-full mx-auto tablet:flex-row flex-col'>
@@ -132,7 +142,7 @@ const Contact: React.FC = () => {
             Send Message <BiSend className='ml-2' /></button>
             </div>
         {/* </div> */}
-      </form>
+      </form></Slide>
     </div>
   )
 }

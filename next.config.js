@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-	enabled: process.env.ANALYZE === "true",
-});
 
-module.exports = withBundleAnalyzer({
-	reactStrictMode: true,
+module.exports = {
+	reactStrictMode: false,
 	images: {
 		domains: [
 			"i.imgur.com",
@@ -13,4 +10,4 @@ module.exports = withBundleAnalyzer({
 			"miro.medium.com",
 		],
 	},
-});
+};

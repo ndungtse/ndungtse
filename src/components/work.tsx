@@ -1,53 +1,29 @@
-import { AnimationControls, useAnimation, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { urlForImage } from "../lib/sanity";
 import { useInView } from "react-intersection-observer";
 import Image, { ImageLoaderProps } from "next/image";
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import { ProjectType } from "../lib/types";
+import { useApp } from "../contexts/AppContext";
+import { Slide } from 'react-awesome-reveal'
 
-const myLoader = ({ src }: ImageLoaderProps) => {
-	return `${src}`;
-};
-
-const textVariant = {
-	before: { opacity: 0, x: -40, transition: { duration: 10 } },
-	after: { opacity: 1, x: 0 },
-};
-
-const imgVariant = {
-	before: { opacity: 0, x: 40, transition: { duration: 10 } },
-	after: { opacity: 1, x: 0 },
-};
 
 type Props = {
 	work: ProjectType;
 	no: number;
 }
 
-const Work = ({ no, work }: Props) => {
-	const control: AnimationControls = useAnimation();
-	const [proref, inView] = useInView();
-	const [imgVar, setImgVar] = useState<any>(imgVariant);
-	const [textVar, setTextVar] = useState<any>(textVariant);
-
-	useEffect(() => {
-		if (inView) {
-			control.start("after");
-			console.log("pro");
-		}
-	}, [control, inView]);
-
+const Work = ({ work }: Props) => {
+ const { isDark} = useApp()
+	const cardClass = isDark ? 'cardb' : 'carde'
 	return (
-		<div
-			className={` flex flex-col border-[1px]
-      border-slate-200 shadow-md items-center p-[4%] justify-between gap-x-8  mt-[3vh] w-[80%] mx-auto`}
+		<Slide triggerOnce
+		direction='up'
 		>
-			<motion.div
-				ref={proref}
-				variants={no % 2 === 0 ? imgVar : textVar}
-				animate={control}
-				initial="before"
+		<div
+			className={` flex ${cardClass} flex-col shadow-md items-center p-[4%] justify-between gap-x-8  w-full mx-auto h-full`}
+		>
+			<div
 				className=" overflow-hidden"
 			>
 				<Image
@@ -58,17 +34,13 @@ const Work = ({ no, work }: Props) => {
 					width={1920}
 					className=""
 				/>
-			</motion.div>
-			<motion.div
-				ref={proref}
-				variants={no % 2 === 0 ? textVar : imgVar}
-				animate={control}
-				initial="before"
+			</div>
+			<div
 				className="flex items-center mt-2 flex-col"
 			>
 				<h2 className=" text-xl font-bold">{work.title}</h2>
 				<p className="">{work.description}</p>
-			</motion.div>
+			</div>
 			<div className="flex items-center w-full justify-between">
 				<a
 					href={work.link}
@@ -90,6 +62,7 @@ const Work = ({ no, work }: Props) => {
 				</a>
 			</div>
 		</div>
+		</Slide>
 	);
 };
 

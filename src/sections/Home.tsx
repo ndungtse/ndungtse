@@ -8,9 +8,11 @@ import {
 } from "react-icons/fa";
 import TypeEffect from "../components/TypefEffect";
 import { useApp } from "../contexts/AppContext";
+import { socialLinks } from "../contexts/data1";
 
 const Home: React.FC = () => {
-	const { themeClass } = useApp();
+	const { themeClass, isDark } = useApp();
+	const cardClass = isDark ? 'cardb' : 'carde'
 
 	return (
 		<div
@@ -33,71 +35,22 @@ const Home: React.FC = () => {
 					</div>
 					<div
 						className="w-full
-					   flex items-start flex-wrap justify-center mt-2 text-blue-600"
+					   flex items-start flex-wrap gap-6 justify-center mt-2 text-blue-600"
 					>
-						<a
-							className="flex items-center mt-5 pl-6"
-							href="https://www.linkedin.com/in/ishimwe-ndungutse-charles-079418227/"
-						>
-							<div
-								className="flex items-center bg-blue-800 rounded-full
-          				 text-white justify-center p-2"
-							>
-								<FaLinkedin className="text-xl" />
-							</div>
-						</a>
-						<a
-							className="flex items-center mt-5 pl-6"
-							href="https://github.com/NdungutseCharles103"
+						{socialLinks.map(link => <a
+							key={link.id}
+							className={`flex items-center text-xl ${cardClass} ${themeClass.text} rounded-full text-blue-800`}
+							href={link.link}
 							target="_blank"
 							rel="noreferrer"
 						>
 							<div
-								className="flex items-center bg-blue-800 rounded-full
-          				 text-white justify-center p-2"
+								className="flex items-center bg-blu-800 rounded-full
+          				 justify-center p-2"
 							>
-								<FaGithubSquare className="text-xl" />
+								{link.icon}
 							</div>
-						</a>
-						<a
-							className="flex items-center mt-5 pl-6"
-							href="https://www.facebook.com/ishimwendungutsecharles"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<div
-								className="flex items-center bg-blue-800 rounded-full
-          				 	text-white justify-center p-2"
-							>
-								<FaFacebookSquare className="text-xl" />
-							</div>
-						</a>
-						<a
-							className="flex items-center mt-5 pl-6"
-							href="https://www.instagram.com/ndungutse_charles/"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<div
-								className="flex items-center bg-blue-800 rounded-full
-          				 	text-white justify-center p-2"
-							>
-								<FaInstagramSquare className="text-xl" />
-							</div>
-						</a>
-						<a
-							className="flex items-center mt-5 pl-6"
-							href="mailto:ndungutsecharles103@gmail.com"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<div
-								className="flex items-center bg-blue-800 rounded-full
-          				 	text-white justify-center p-2"
-							>
-								<BiEnvelopeOpen className="text-xl" />
-							</div>
-						</a>
+						</a>)}
 					</div>
 				</div>
 				<div className="flex absolute top-0 px-[5%] laptop:px-0 laptop:aspect-square items-center justify-center">

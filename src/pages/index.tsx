@@ -11,12 +11,14 @@ import Footer from "../sections/Footer";
 import Contact from "../sections/Contact";
 import Fields from "../sections/Fields";
 import Skills from "../sections/Skills";
+import { BiMoon, BiSun } from "react-icons/bi";
 
 function App({ recent }: any) {
 	const [showArr, setShowArr] = useState(false);
-	const { themeClass } = useApp();
+	const { themeClass, isDark, setIsDark } = useApp();
 	const [linear, setLinear] = useState(false);
 
+	const cardClass = isDark ? 'cardb' : 'carde'
 	const goToTop = () => {
 		window.scrollTo({ top: 0 });
 	};
@@ -36,10 +38,9 @@ function App({ recent }: any) {
 		<>
 			<Layout setLinear={setLinear}>
 				<Home />
-				<div className='bg-white z-10'>
+				<div className={`bg-white z-10 ${cardClass} neuro`}>
 					<Fields />
 					<Skills />
-					<RecentActivity recent={recent} setLinear={setLinear} />
 					{showArr && (
 						<FaArrowUp
 							onClick={goToTop}
@@ -47,12 +48,22 @@ function App({ recent }: any) {
         				right-7 text-white  bg-blue-900 p-3 text-[2.5em]'
 						/>
 					)}
+					<RecentActivity recent={recent} />
 					<div className={`flex flex-col ${themeClass.bg}`}>
 						<Contact />
 					</div>
 					<Footer />
 				</div>
 			</Layout>
+			<button 
+				onClick={()=>setIsDark(!isDark)}
+			className={`fixed z-50 cursor-pointer ${cardClass} ${themeClass.bg} ${themeClass.text} p-2 rounded-full left-11 bottom-11 text-2xl`}>
+				{isDark ?(
+					<BiSun />
+				):(
+					<BiMoon />
+				)}
+			</button>
 		</>
 	);
 }

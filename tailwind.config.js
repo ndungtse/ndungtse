@@ -13,7 +13,7 @@ module.exports = {
 			md: "750px",
 			xtab: "960px",
 			laptop: "1100px",
-			desktop: "1280px",
+			desktop: "1380px",
 		},
 		fontFamily: {
 			'oxa': ['Oxanium', 'sans-serif'],
