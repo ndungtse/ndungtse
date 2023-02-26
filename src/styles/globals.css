@@ -92,7 +92,7 @@
     box-shadow: 1px 1px 5px #1e40af,
         -1px -1px 5px #1e40af;
 } */
-#cover{
+#cover {
     /* border-radius: 10px; */
     background: #191a2e;
     box-shadow: 5px 5px 14px #121220,
@@ -102,6 +102,6 @@
 .carde {
     /* border-radius: 10px; */
     background: #eaedf0;
-    box-shadow:  5px 5px 10px #9ea2a8,
-                 -5px -5px 10px #ffffff;
+    box-shadow: 5px 5px 10px #9ea2a8,
+        -5px -5px 10px #ffffff;
 }
