@@ -13,6 +13,10 @@ I am a web developer, software developer, mobile developer.
 
 I am a person who is interested in learning new things and making things as simple as possible
 
+
+###  About github profile
+![Metrics](https://metrics.lecoq.io/ndungutsecharles103?template=classic&repositories.affiliations=&config.timezone=Africa%2FCairo) <br>
+
 ### 🤝 Connect with me:
 
 <a href="https://www.linkedin.com/in/ishimwe-ndungutse-charles-079418227/"><img align="left" src="https://raw.githubusercontent.com/yushi1007/yushi1007/main/images/linkedin.svg" alt="Yu Shi | LinkedIn" width="21px"/></a>
@@ -24,10 +28,8 @@ I am a person who is interested in learning new things and making things as simp
 
 ## 🔭 I'm currently working on
 
-- Photo Corner
-- [Photo-Corner_RN](https://github.com/NdungutseCharles103/Photo_Corner_RN).
-- Oneplay
-- Taskero
+- RAEL
+- Contributing to different Projects
 
 ## 🌱 I'm currently learning
 
@@ -35,7 +37,7 @@ I am a person who is interested in learning new things and making things as simp
 - C++
 - Java
 - C#
-- Electron
+- Machine Learning
 
 #### 📫 How to reach me: ndungutsecharles103@gmail.com
 
@@ -68,12 +70,3 @@ I am a person who is interested in learning new things and making things as simp
 ![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
 
 
-
-## 📈 GitHub Stats 
-
-<div>
-  <a href="https://github.com/ndungutsecharles103"></a>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=ndungutsecharles103&show_icons=true&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ndungutsecharles103&langs_count=8&layout=compact"/>
-  <img height="180em" src="https://activity-graph.herokuapp.com/graph?username=NdungutseCharles103&bg_color=060a39&color=fff&line=00fe&point=7d85db&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)"/>
-</div>
