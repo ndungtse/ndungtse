@@ -24,10 +24,8 @@ I am a person who is interested in learning new things and making things as simp
 
 ## 🔭 I'm currently working on
 
-- Photo Corner
-- [Photo-Corner_RN](https://github.com/NdungutseCharles103/Photo_Corner_RN).
-- Oneplay
-- Taskero
+- RAEL
+- Contributing to different projects
 
 ## 🌱 I'm currently learning
 
@@ -35,7 +33,7 @@ I am a person who is interested in learning new things and making things as simp
 - C++
 - Java
 - C#
-- Electron
+- Machine Learning
 
 #### 📫 How to reach me: ndungutsecharles103@gmail.com
 
@@ -70,6 +68,9 @@ I am a person who is interested in learning new things and making things as simp
 
 
 ## 📈 GitHub Stats 
+
+###  🖲 Ctrl + F5
+![Metrics](https://metrics.lecoq.io/pacifiquem?template=classic&repositories.affiliations=&config.timezone=Africa%2FCairo) <br>
 
 <div>
   <a href="https://github.com/ndungutsecharles103"></a>
