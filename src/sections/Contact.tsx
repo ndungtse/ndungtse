@@ -37,27 +37,32 @@ const Contact: React.FC = () => {
       console.log(data);
 
       setIsSending(true);
-      const res = await emailjs.send(
-        "service_mh0anqu",
-        "template_7swvlxh",
-        {
-          from_name: data.name,
-          to_name: "Charles",
-          message: data.message,
-          // from_email: data.email,
-          // subject: data.title,
-          reply_to: data.email,
-        },
-        process.env.NEXT_PUBLIC_KEY
-      );
-      console.log(res);
-      setData({});
-      setWarn(false);
-      setSuccess(true);
+      try {
+        const res = await emailjs.send(
+          "service_7kai09n",
+          "template_7swvlxh",
+          {
+            from_name: data.name,
+            to_name: "Charles",
+            message: data.message,
+            from_email: data.email,
+            subject: data.title,
+            reply_to: data.email,
+          },
+          process.env.NEXT_PUBLIC_KEY
+        );
+        console.log(res);
+        setData({});
+        setWarn(false);
+        setSuccess(true);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsSending(false);
+      }
     } else {
       setWarn(true);
     }
-    setIsSending(false);
   };
 
   return (

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { useApp } from "../app/AppProvider";
 import { sanityClient } from "../lib/sanity.server";
+import Image from "next/image";
 
 const Navbar = () => {
   const { themeClass, mobile, setMobile } = useApp();
@@ -57,8 +58,10 @@ const Navbar = () => {
           onClick={mobile ? mobileHan : () => {}}
           className="md:static top-[0.15em] fixed left-7 flex items-center"
         >
-          <img
+          <Image
             className="aspect-square w-[60px]"
+            height={60}
+            width={60}
             src={"/images/logo.png"}
             alt="charles"
           />
