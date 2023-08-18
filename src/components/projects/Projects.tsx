@@ -4,26 +4,7 @@ import { Link } from "react-scroll";
 import SectionWrapper from "../SectionWrapper";
 import ProjectCard from "./ProjectCard";
 
-const projectsData: project[] = [
-  {
-    name: "Project 1",
-    // description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    image: "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-    category: "Frontend",
-    links: { visit: "https://github.com", code: "https://github.com" },
-    techstack: "React TailwindCSS Typescript",
-  },
-  {
-    name: "Project 2",
-    // description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    image: "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-    category: "Backend",
-    links: { visit: "https://github.com", code: "https://github.com" },
-    techstack: "React TailwindCSS Typescript",
-  },
-];
-
-const Projects = () => {
+const Projects = ({ projectsData }: { projectsData: project[] }) => {
   const [projects, setProjects] = useState(
     [...projectsData].reverse() as project[]
   );

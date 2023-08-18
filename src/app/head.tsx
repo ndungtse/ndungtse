@@ -9,7 +9,7 @@ export default function Head() {
       <meta property="og:description"
         content="I'm Ndungutse Charles, full-stack developer based in Pune, India. My journey in web development began during my first year of college." />
       <meta property="og:url" content="https://ndungutsecharles.vercel.app" />
-      <meta property="og:image" content="https://ndungutsecharles.vercel.app/portfolio-fork.png" />
+      <meta property="og:image" content="https://ndungutsecharles.vercel.app/avatar.png" />
       <link rel="canonical" href="https://ndungutsecharles.vercel.app" />
       <meta name="author" content="Ndungutse Charles" />
       <meta name="language" content="English" />

@@ -3,32 +3,11 @@ import { skill } from "@/types/main";
 import SkillCard from "./SkillCard";
 import SectionWrapper from "../SectionWrapper";
 
-const Skills = () => {
-  const skillData: skill[] = new Array(20)
-    .fill({
-      category: "Frontend",
-      name: "HTML",
-      image: "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-    })
-    .map((s, i) => {
-      if (i % 2 === 0) {
-        return {
-          category: "Frontend",
-          name: "HTML",
-          image: "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-        };
-      } else {
-        return {
-          category: "Backend",
-          name: "NodeJS",
-          image: "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-        };
-      }
-    });
+const Skills = ({ skillData }: { skillData?: skill[] }) => {
   const categories = Array.from(
-    new Set(skillData.map((s: { category: any }) => s.category))
-  );
-  const [category, setCategory] = useState(categories[0]);
+    new Set(skillData?.map((s: { category: any }) => s.category))
+    );
+    const [category, setCategory] = useState(categories[0]);
 
   return (
     <SectionWrapper
@@ -55,7 +34,7 @@ const Skills = () => {
 
       <div className="lg:w-3/4 2xl:w-3/5 my-8 mx-auto md:px-12 grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 place-items-center gap-8">
         {skillData
-          .filter(
+          ?.filter(
             (s: skill) => s.category.toLowerCase() === category.toLowerCase()
           )
           .map((s: any, i: number) => (

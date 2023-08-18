@@ -3,33 +3,17 @@ import { useTheme } from "next-themes";
 import { Link as ScrollLink } from "react-scroll";
 import Typewriter from "typewriter-effect";
 import { IoIosArrowForward } from "react-icons/io";
-import wavingHand from "@/public/waving-hand.gif";
+import { main } from "@/types/main";
 
-// interface HeroProps {
-//     mainData: main
-// }
+interface HeroProps {
+  mainData?: main;
+}
 
-const Hero = () => {
+const Hero = ({ mainData }: HeroProps) => {
   const { theme } = useTheme();
-  const mainData = {
-    name: "Ndungutse Charles",
-    titles: [
-      "Web Development",
-      "Mobile Development",
-      "Open Source",
-      "Data Science",
-    ],
-    heroImage: "/Ned.jpeg",
-    shortDesc:
-      "I am a Full Stack Web Developer, Competitive Programmer and Open Source Enthusiast.",
-    techStackImages: [
-      "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-      "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-      "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-      "https://img.icons8.com/?size=512&id=wPohyHO_qO1a&format=png",
-    ],
-  };
-
+  if (!mainData) {
+    return null;
+  }
   const { name, titles, heroImage, shortDesc, techStackImages } = mainData;
 
   return (
@@ -42,10 +26,10 @@ const Hero = () => {
       <div className="absolute -z-10 min-h-screen h-full w-full">
         <Image
           src="/herobgc.jpg"
-          layout="fill"
-          objectFit="cover"
+          // layout="fill"
+          fill
           loading="lazy"
-          className="object-bottom"
+          className="object-bottom object-cover"
           quality={100}
           alt={""}
         />
@@ -59,7 +43,7 @@ const Hero = () => {
               alt="waving-hand"
               width={30}
               height={30}
-              src={wavingHand}
+              src={"/waving-hand.gif"}
             />
             <p className="text-lg md:text-xl mt-2 md:mt-1.5">Hey</p>
           </div>
@@ -175,7 +159,7 @@ const Hero = () => {
             gradientUnits="userSpaceOnUse"
           >
             <stop stopColor="#2D88E2"></stop>
-            <stop offset="1" stop-color="#36EC74"></stop>
+            <stop offset="1" stopColor="#36EC74"></stop>
           </linearGradient>
         </defs>
       </svg>
