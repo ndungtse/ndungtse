@@ -19,6 +19,11 @@ export default {
       type: 'image', // You might want to use 'image' type here
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+    },
+    {
       name: 'techstack',
       title: 'Tech Stack',
       type: 'string',

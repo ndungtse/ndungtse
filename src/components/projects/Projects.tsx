@@ -9,11 +9,10 @@ const Projects = ({ projectsData }: { projectsData: project[] }) => {
     [...projectsData].reverse() as project[]
   );
 
-  // const categories = ['All', ...Array.from(new Set(projects.map((s) => s.category)))]
-  const categories = [...Array.from(new Set(projects.map((s) => s.category)))];
+  const categories = ['all', ...Array.from(new Set(projects.map((s) => s.category)))]
+  // const categories = [...Array.from(new Set(projects.map((s) => s.category)))];
 
-  // const [category, setCategory] = useState(categories[0] || "All")
-  const [category, setCategory] = useState(categories[0]);
+  const [category, setCategory] = useState('all'|| categories[0]);
 
   const [filteredProjects, setFilteredProjects] = useState(
     projects as project[]
@@ -23,18 +22,17 @@ const Projects = ({ projectsData }: { projectsData: project[] }) => {
   const filterProjects = (cat: string) => {
     setViewAll(false);
     setCategory(cat);
-    // cat === "All" ? setFilteredProjects(projects) :
+    const shuffledProjects = [...projects].sort(() => 0.5 - Math.random());
+    cat === "all" ? setFilteredProjects(shuffledProjects) :
     setFilteredProjects(
-      projects.filter(
+      shuffledProjects.filter(
         (p: project) => p.category.toLowerCase() === cat.toLowerCase()
       )
     );
   };
 
   useEffect(() => {
-    filterProjects(
-      categories.includes("MERN Stack") ? "MERN Stack" : categories[0]
-    );
+    filterProjects('all');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -42,12 +40,12 @@ const Projects = ({ projectsData }: { projectsData: project[] }) => {
     <SectionWrapper id="projects" className="mx-4 md:mx-0 min-h-screen">
       <h2 className="text-4xl text-center">Projects</h2>
 
-      <div className="overflow-x-auto scroll-hide md:w-full max-w-screen-sm mx-auto mt-6 flex justify-between items-center gap-2 md:gap-3 bg-white dark:bg-grey-800 p-2 rounded-md">
+      <div className="overflow-x-auto md:w-full max-w-screen-sm mx-auto mt-6 flex justify-between items-center gap-2 md:gap-3 bg-white dark:bg-grey-800 p-2 rounded-md">
         {categories.map((c: string = "", i: number) => (
           <span
             key={i}
             onClick={() => filterProjects(c)}
-            className={`p-1.5 md:p-2 w-full text-sm md:text-base text-center capitalize rounded-md ${
+            className={`p-1.5 md:p-2 whitespace-nowrap w-full text-sm md:text-base text-center capitalize rounded-md ${
               category.toLowerCase() === c.toLowerCase()
                 ? "bg-blue-600 text-white"
                 : "hover:bg-gray-100 hover:dark:bg-grey-900"

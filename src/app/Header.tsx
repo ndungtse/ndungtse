@@ -38,11 +38,13 @@ export default function Header({ logo }: { logo?: string }) {
             className="rounded-full"
             width={30}
             height={30}
-            />
+          />
         </Link>
 
-        <ul className={`flex items-center border px-4 rounded-full shadow-sm h-full gap-8 dark:border-gray-700 dark:bg-grey-900 dark:bg-opacity-40
-        `}>
+        <ul
+          className={`flex items-center border px-4 rounded-full shadow-sm h-full gap-8 dark:border-gray-700 dark:bg-grey-900 dark:bg-opacity-40
+        `}
+        >
           {navs.map((e, i) => (
             <li key={i}>
               <ScrollLink
@@ -67,7 +69,13 @@ export default function Header({ logo }: { logo?: string }) {
       </nav>
 
       <nav className="p-4 flex sm:hidden items-center justify-between">
-        <FaNodeJs size={28} />
+        <Image
+          src={logo ? logo : "/avatar.png"}
+          alt="logo"
+          className="rounded-full"
+          width={30}
+          height={30}
+        />
         <div className="flex items-center gap-4">
           <span
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -75,7 +83,7 @@ export default function Header({ logo }: { logo?: string }) {
           >
             {theme === "dark" ? <FiSun /> : <FiMoon />}
           </span>
-          <CgMenuRight size={20} onClick={() => setNavCollapse(false)} />
+          <CgMenuRight className=" cursor-pointer" size={20} onClick={() => setNavCollapse(false)} />
         </div>
       </nav>
 
@@ -88,7 +96,7 @@ export default function Header({ logo }: { logo?: string }) {
 
         <div className="flex flex-col p-4 gap-5 bg-gray-100/95 backdrop-filter backdrop-blur-sm dark:bg-grey-900/95 w-3/4">
           <CgClose
-            className="self-end my-2"
+            className="self-end my-2 cursor-pointer"
             size={20}
             onClick={() => setNavCollapse(true)}
           />
@@ -96,7 +104,7 @@ export default function Header({ logo }: { logo?: string }) {
           {navs.slice(0, 4).map((e) => (
             <ScrollLink
               key={e}
-              className="hover:text-purple-600 py-1.5 px-4 rounded transition-colors capitalize cursor-pointer"
+              className="hover:text-blue-600 py-1.5 px-4 rounded transition-colors capitalize cursor-pointer"
               to={e}
               offset={-60}
               smooth={true}

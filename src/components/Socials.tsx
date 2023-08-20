@@ -5,6 +5,13 @@ import * as Fa from "react-icons/fa";
 import { social } from "@/types/main";
 
 const Socials = ({ socials }: { socials?: social[] }) => {
+
+  const getHref = (name: string, link: string) => {
+    if (name === "Email") return `mailto:${link}`;
+    else if (name === "Phone") return `tel:${link}`;
+    else return link;
+  };
+
   return (
     <section
       id="socials"
@@ -13,9 +20,10 @@ const Socials = ({ socials }: { socials?: social[] }) => {
       {socials?.map((s: social) => {
         return (
           <Link
-            href={s.link}
+            href={getHref(s.name, s.link)}
             target="_blank"
             rel="noreferrer"
+            title={s.link}
             key={s.name}
             className="grid place-items-center p-2 hover:animate-bounce rounded-full bg-blue-700 text-white"
           >
