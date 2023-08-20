@@ -1,28 +1,20 @@
-const withMDX = require("@next/mdx")({
-  extension: /\.mdx?$/,
-  options: {
-    // If you use remark-gfm, you'll need to use next.config.mjs
-    // as the package is ESM only
-    // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [],
-    rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
-  },
-});
 /** @type {import('next').NextConfig} */
-
-module.exports = withMDX({
-  reactStrictMode: false,
-  images: {
-    domains: [
-      "i.imgur.com",
-      "cdn.sanity.io",
-      "static.vecteezy.com",
-      "miro.medium.com",
-    ],
-  },
+const nextConfig = {
   experimental: {
     appDir: true,
   },
-});
+  images: {
+    domains: [
+      "res.cloudinary.com",
+      "firebasestorage.googleapis.com",
+      "img.icons8.com",
+      "raw.githubusercontent.com",
+      "i.imgur.com",
+      "img.freepik.com",
+      "media.geeksforgeeks.org",
+      'cdn.sanity.io',
+    ],
+  },
+};
+
+module.exports = nextConfig;
