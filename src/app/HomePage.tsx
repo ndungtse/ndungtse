@@ -29,7 +29,7 @@ const HomePage = ({ data }: Props) => {
         educationData={data?.educations}
       />
       <Contact />
-      <Footer socials={data.socials} />
+      <Footer socials={data?.socials} />
     </>
   );
 };
