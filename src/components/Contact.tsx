@@ -5,6 +5,7 @@ import SectionWrapper from "./SectionWrapper"
 import Image from "next/image";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
 
@@ -16,34 +17,71 @@ const Contact = () => {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    //     e.preventDefault();
+
+    //     if (!values.name.trim() || !values.email.trim() || !values.message.trim()) {
+    //         toast.warning("Empty Fields!")
+    //         return false;
+    //     }
+
+    //     setLoading(true);
+    //     axios.post("/api/mail", {
+    //         name: values.name,
+    //         email: values.email,
+    //         message: values.message,
+    //     }).then((res) => {
+    //         if (res.status === 200) {
+    //             setValues({ name: "", email: "", message: "" });
+    //             setLoading(false);
+    //             setSuccess(true);
+    //             toast.success(res.data.message)
+    //         } else {
+    //             setLoading(false);
+    //             toast.error(res.data.message)
+    //         }
+    //     }).catch((err) => {
+    //         setLoading(false);
+    //         toast.error(err.message)
+    //     });
+    // };
+
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
-
-        if (!values.name.trim() || !values.email.trim() || !values.message.trim()) {
-            toast.warning("Empty Fields!")
-            return false;
-        }
-
-        setLoading(true);
-        axios.post("/api/mail", {
-            name: values.name,
-            email: values.email,
-            message: values.message,
-        }).then((res) => {
-            if (res.status === 200) {
-                setValues({ name: "", email: "", message: "" });
-                setLoading(false);
-                setSuccess(true);
-                toast.success(res.data.message)
-            } else {
-                setLoading(false);
-                toast.error(res.data.message)
-            }
-        }).catch((err) => {
+        if (
+          values.name.trim() !== "" &&
+          values.email.trim() !== "" &&
+          values.message.trim() !== ""
+        ) {
+          console.log(values);
+    
+          setLoading(true);
+          try {
+            const res = await emailjs.send(
+              "service_7kai09n",
+              "template_7swvlxh",
+              {
+                from_name: values.name,
+                to_name: "Charles",
+                message: values.message,
+                from_email: values.email,
+                // subject: values.name,
+                reply_to: values.email,
+              },
+              process.env.NEXT_PUBLIC_KEY
+            );
+            console.log(res);
+            setValues({} as any);
+            setSuccess(true);
+          } catch (error) {
+            console.log(error);
+          } finally {
             setLoading(false);
-            toast.error(err.message)
-        });
-    };
+          }
+        } else {
+        //   setWarn(true);
+        }
+      };
 
     const handleChange = (e: | React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
         setValues((prevInput) => ({
