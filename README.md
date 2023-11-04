@@ -15,7 +15,7 @@ I am a person who is interested in learning new things and making things as simp
 
 ### About github profile
 
-![Metrics](https://metrics.lecoq.io/ndungutsecharles103?template=classic&repositories.affiliations=&config.timezone=Africa%2FCairo) <br>
+![Metrics](https://metrics.lecoq.io/ndungtse?template=classic&repositories.affiliations=&config.timezone=Africa%2FCairo) <br>
 
 ### 🤝 Connect with me
 
@@ -71,7 +71,7 @@ I am a person who is interested in learning new things and making things as simp
 
 ### Snake Game Contribution 😁
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/NdungutseCharles103/NdungutseCharles103/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NdungutseCharles103/NdungutseCharles103/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/NdungutseCharles103/NdungutseCharles103/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ndungtse/ndungtse/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ndungtse/ndungtse/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ndungtse/ndungtse/output/github-contribution-grid-snake.svg">
 </picture>
