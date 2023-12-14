@@ -1,14 +1,16 @@
 "use client";
 import { data } from "@/types/main";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/skills/Skills";
-import Projects from "@/components/projects/Projects";
-import Socials from "@/components/Socials";
-import Experiences from "@/components/experiences/Experiences";
-import Contact from "@/components/Contact";
-import Header from "./Header";
-import Footer from "./Footer";
+import dynamic from "next/dynamic";
+const Hero = dynamic(() => import("@/components/Hero"));
+const About = dynamic(() => import("@/components/About"));
+const Skills = dynamic(() => import("@/components/skills/Skills"));
+const Projects = dynamic(() => import("@/components/projects/Projects"));
+const Socials = dynamic(() => import("@/components/Socials"));
+const Experiences = dynamic(() => import("@/components/experiences/Experiences"));
+const Contact = dynamic(() => import("@/components/Contact"));
+const Header = dynamic(() => import("./Header"));
+const Footer = dynamic(() => import("./Footer"));
+
 
 interface Props {
   data: data;

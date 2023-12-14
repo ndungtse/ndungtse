@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
 import portfolioQuery from "../sanity/queries";
 import { sanityClient } from "@/sanity/sanity.client";
-import HomePage from "./HomePage";
+const HomePage = dynamic(() => import("./HomePage"), {ssr: false});
 
 export const revalidate = 30
 
