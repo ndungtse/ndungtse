@@ -14,7 +14,7 @@ const About = ({ aboutData }: { aboutData?: about }) => {
       id="about"
       className="min-h-[90vh] pt-12 bg-gradient-to-b from-white to-gray-100/20 dark:from-grey-900 dark:to-grey-900"
     >
-      <h2 className="text-4xl text-center">About Me</h2>
+      <h2 className="text-center font-semibold sm:text-4xl text-2xl">About Me</h2>
 
       <div className="w-full lg:w-11/12 2xl:w-4/5 mt-2 lg:mt-20 mx-auto flex flex-col md:gap-4 lg:flex-row justify-between items-center">
         <div className="p-3 w-56 self-start md:w-2/5 lg:w-72 bg-white dark:bg-grey-800 flex flex-col gap-2 items-center rounded-2xl mx-auto lg:mx-16 hover:-translate-y-2 transition-transform duration-300 lg:-rotate-3">
@@ -33,7 +33,7 @@ const About = ({ aboutData }: { aboutData?: about }) => {
 
         <div className="flex-1 text-left mx-4 mt-4 md:mt-0 md:mx-0 md:p-6">
           <div className="flex flex-col gap-2.5">
-            <p className="text-3xl font-semibold">
+            <p className="text-3xl font-semibold sm:text-start text-center">
               {"Ishimwe Ndungutse Charles"}
             </p>
             <p className="text-blue-800 w-fit rounded py-1 px-2 text-sm dark:text-blue-600 bg-blue-50 dark:bg-blue-900/10">

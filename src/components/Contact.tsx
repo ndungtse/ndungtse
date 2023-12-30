@@ -92,7 +92,7 @@ const Contact = () => {
 
     return (
         <SectionWrapper id="contact" className="mb-16 mx-4 lg:mx-0">
-            <h2 className="text-center text-4xl">Contact Me</h2>
+            <h2 className="text-center font-semibold sm:text-4xl text-2xl">Contact Me</h2>
             <ToastContainer />
 
             <div className="w-full lg:w-5/6 2xl:w-3/4 mt-10 md:mt-16 mx-auto flex justify-between rounded-xl">

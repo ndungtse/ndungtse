@@ -18,8 +18,8 @@ const Experiences = ({ experienceData, educationData }: Props) => {
     const [educations, setEducations] = useState([...educationData].reverse() as education[])
 
     return (
-        <SectionWrapper id="experience" className="min-h-screen">
-            <h2 className="text-4xl text-center">Experience</h2>
+        <SectionWrapper id="experience" className="sm:min-h-[70vh]">
+            <h2 className="text-center font-semibold sm:text-4xl text-2xl">Experience</h2>
 
             <div className="w-fit mx-auto mt-6 p-2 bg-white dark:bg-grey-800 rounded-md flex gap-2 items-center">
                 {['Experience', 'Education'].map((e, i) => (

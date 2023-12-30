@@ -21,7 +21,7 @@ const Hero = ({ mainData }: HeroProps) => {
       id="home"
       className={`${
         theme === "dark" && "bg-grey-900"
-      } relative min-h-screen w-full mx-auto overflow-hidden`}
+      } relative sm:min-h-[90vh] w-full mx-auto overflow-hidden`}
     >
       <div className="absolute -z-10 min-h-screen h-full w-full">
         <Image
