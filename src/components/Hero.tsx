@@ -36,7 +36,7 @@ const Hero = ({ mainData }: HeroProps) => {
         />
       </div>
 
-      <div className="py-16 lg:py-48 flex flex-col-reverse lg:flex-row justify-around gap-10 lg:gap-0">
+      <div className="py-16 lg:py-64 flex flex-col-reverse lg:flex-row justify-around gap-10 lg:gap-0">
         <div className="flex flex-col gap-4 md:gap-6 lg:text-left text-center lg:items-start items-center lg:w-1/2 2xl:w-1/3 mx-4 md:mx-6 xl:mx-0">
           <div className="flex items-center gap-1">
             <Image
