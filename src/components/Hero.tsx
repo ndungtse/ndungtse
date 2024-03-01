@@ -4,6 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 import Typewriter from "typewriter-effect";
 import { IoIosArrowForward } from "react-icons/io";
 import { main } from "@/types/main";
+import { BackgroundBeams } from "./ui/background-beams";
 
 interface HeroProps {
   mainData?: main;
@@ -21,7 +22,7 @@ const Hero = ({ mainData }: HeroProps) => {
       id="home"
       className={`${
         theme === "dark" && "bg-grey-900"
-      } relative sm:min-h-[90vh] w-full mx-auto overflow-hidden`}
+      } relative sm:min-h-[100vh] w-full mx-auto overflow-hidden`}
     >
       <div className="absolute -z-10 min-h-screen h-full w-full">
         <Image
@@ -163,6 +164,7 @@ const Hero = ({ mainData }: HeroProps) => {
           </linearGradient>
         </defs>
       </svg>
+      <BackgroundBeams />
     </section>
   );
 };

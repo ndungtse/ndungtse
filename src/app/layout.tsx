@@ -1,4 +1,4 @@
-import { Poppins } from "@next/font/google";
+import { Poppins } from "next/font/google";
 import { Metadata } from "next";
 import "./globals.css";
 import Providers from "./providers";
@@ -10,6 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ndungutsecharles.me'),
   title: "Portfolio | Ndungutse Charles - Full Stack Developer",
   description:
     "I'm Ndungutse Charles, full-stack developer based in Kigali, Rwanda. My journey in web development began during my first year of upper-high school.",
